@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillEarn - Learn skills, earn money. Students gain real skills through AI-guided training and earn by completing micro tasks from businesses.">
+  <title>SkillEarn — Learn Skills, Earn Money</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#/" class="navbar-logo">⚡ SkillEarn</a>
+    <div class="navbar-links" id="navLinks">
+      <a href="#/">Home</a>
+      <a href="#/tasks">Browse Tasks</a>
+      <a href="#/about">How It Works</a>
+    </div>
+    <div class="navbar-auth" id="navAuth">
+      <a href="#/login" class="btn btn-secondary btn-sm">Log In</a>
+      <a href="#/signup" class="btn btn-primary btn-sm">Sign Up Free</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<!-- ===== LANDING PAGE ===== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="container flex items-center justify-between">
+      <div class="hero-content">
+        <div class="hero-badge"><span class="dot"></span> Now in India — Free to join</div>
+        <h1>Learn Skills.<br><span class="gradient-text">Earn Money.</span></h1>
+        <p>Students gain real skills through AI-guided training and earn money by completing micro tasks from small businesses and startups.</p>
+        <div class="hero-btns">
+          <a href="#/signup" class="btn btn-primary btn-lg">🚀 Start Earning Free</a>
+          <a href="#/signup?role=business" class="btn btn-amber btn-lg">💼 Post a Task</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><h3 id="statStudents">5,000+</h3><p>Active Students</p></div>
+          <div class="hero-stat"><h3 id="statTasks">1,200+</h3><p>Tasks Completed</p></div>
+          <div class="hero-stat"><h3 id="statEarned">₹8L+</h3><p>Earned by Students</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual"></div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="howItWorks">
+    <div class="container">
+      <div class="section-header">
+        <h2>How <span class="gradient-text">SkillEarn</span> Works</h2>
+        <p>From beginner to earning — in just 3 simple steps</p>
+      </div>
+      <div class="steps-grid">
+        <div class="glass-card step-card">
+          <div class="step-icon">📚</div>
+          <div class="step-number">1</div>
+          <h3>Learn a Skill</h3>
+          <p>Pick a skill path — Web Dev, Design, Python, Video Editing — and learn through short lessons, quizzes, and mini projects.</p>
+        </div>
+        <div class="glass-card step-card">
+          <div class="step-icon">🤖</div>
+          <div class="step-number">2</div>
+          <h3>Get AI-Matched Tasks</h3>
+          <p>Our AI Mentor tests your skills and matches you with real paid tasks you can actually complete successfully.</p>
+        </div>
+        <div class="glass-card step-card">
+          <div class="step-icon">💰</div>
+          <div class="step-number">3</div>
+          <h3>Earn & Build Portfolio</h3>
+          <p>Complete tasks, get paid instantly to your wallet, and build a real portfolio that proves your experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL CATEGORIES -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explore <span class="gradient-text">Skill Paths</span></h2>
+        <p>Choose your skill, learn by doing, and start earning within days</p>
+      </div>
+      <div class="categories-grid">
+        <div class="glass-card category-card" onclick="navigateTo('/tasks?cat=webdev')">
+          <div class="cat-icon">🌐</div><h4>Web Development</h4><p>120+ tasks available</p>
+        </div>
+        <div class="glass-card category-card" onclick="navigateTo('/tasks?cat=python')">
+          <div class="cat-icon">🐍</div><h4>Python</h4><p>85+ tasks available</p>
+        </div>
+        <div class="glass-card category-card" onclick="navigateTo('/tasks?cat=design')">
+          <div class="cat-icon">🎨</div><h4>Graphic Design</h4><p>200+ tasks available</p>
+        </div>
+        <div class="glass-card category-card" onclick="navigateTo('/tasks?cat=video')">
+          <div class="cat-icon">🎬</div><h4>Video Editing</h4><p>95+ tasks available</p>
+        </div>
+        <div class="glass-card category-card" onclick="navigateTo('/tasks?cat=java')">
+          <div class="cat-icon">☕</div><h4>Java</h4><p>60+ tasks available</p>
+        </div>
+        <div class="glass-card category-card" onclick="navigateTo('/tasks?cat=content')">
+          <div class="cat-icon">✍️</div><h4>Content Writing</h4><p>150+ tasks available</p>
+        </div>
+        <div class="glass-card category-card" onclick="navigateTo('/tasks?cat=ai')">
+          <div class="cat-icon">🧠</div><h4>AI Tools</h4><p>75+ tasks available</p>
+        </div>
+        <div class="glass-card category-card" onclick="navigateTo('/tasks?cat=data')">
+          <div class="cat-icon">📊</div><h4>Data Entry & Excel</h4><p>180+ tasks available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Students <span class="gradient-text">Love Us</span></h2>
+        <p>Everything you need to learn, earn, and grow — in one platform</p>
+      </div>
+      <div class="features-grid">
+        <div class="glass-card feature-card">
+          <div class="feat-icon">🤖</div>
+          <h3>AI Mentor</h3>
+          <p>Get personalized guidance, skill assessments, and step-by-step help on every task you take.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feat-icon">🔒</div>
+          <h3>Escrow Payments</h3>
+          <p>Money is held safely until work is approved. No scams, no disputes, guaranteed payments.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feat-icon">📁</div>
+          <h3>Portfolio Builder</h3>
+          <p>Every completed task automatically builds your professional portfolio. Show clients your real work.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feat-icon">🎓</div>
+          <h3>Certificates</h3>
+          <p>Earn verified certificates as you complete skill paths. Add them to your LinkedIn or resume.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feat-icon">⭐</div>
+          <h3>Rating System</h3>
+          <p>Build your reputation with every task. Higher ratings mean better tasks and more money.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feat-icon">💸</div>
+          <h3>Instant Payouts</h3>
+          <p>Withdraw earnings to your UPI, bank account, or wallet anytime with zero fees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARNINGS EXAMPLE -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Real <span class="gradient-text">Earning Examples</span></h2>
+        <p>See what students are earning right now on SkillEarn</p>
+      </div>
+      <div class="grid-3">
+        <div class="glass-card" style="padding:24px;">
+          <div class="flex justify-between items-center" style="margin-bottom:12px;">
+            <span class="badge badge-green">Easy</span>
+            <span class="task-budget">₹150–₹300</span>
+          </div>
+          <h4 style="margin-bottom:8px;">Instagram Posters for Kirana Shop</h4>
+          <p style="color:var(--text-secondary);font-size:0.9rem;">Make 3 creative Instagram posters for a local shop. Canva or Photoshop.</p>
+        </div>
+        <div class="glass-card" style="padding:24px;">
+          <div class="flex justify-between items-center" style="margin-bottom:12px;">
+            <span class="badge badge-amber">Medium</span>
+            <span class="task-budget">₹500–₹800</span>
+          </div>
+          <h4 style="margin-bottom:8px;">Landing Page for Startup</h4>
+          <p style="color:var(--text-secondary);font-size:0.9rem;">Build a responsive landing page using HTML/CSS for a new startup.</p>
+        </div>
+        <div class="glass-card" style="padding:24px;">
+          <div class="flex justify-between items-center" style="margin-bottom:12px;">
+            <span class="badge badge-purple">Advanced</span>
+            <span class="task-budget">₹1,500+</span>
+          </div>
+          <h4 style="margin-bottom:8px;">E-commerce Product Pages</h4>
+          <p style="color:var(--text-secondary);font-size:0.9rem;">Create 10 product pages with SEO descriptions for an online store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Students <span class="gradient-text">Say</span></h2>
+        <p>Hear from students who are already learning and earning</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="glass-card testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"I learned poster design in 1 week and already earned ₹2,000 from 8 tasks. This is better than any internship!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">P</div>
+            <div><h4>Priya Sharma</h4><span>Design Student, Delhi</span></div>
+          </div>
+        </div>
+        <div class="glass-card testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"The AI mentor is amazing. It guided me through my first web dev task step by step. Now I do 3 tasks per week."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">R</div>
+            <div><h4>Rahul Verma</h4><span>BCA Student, Pune</span></div>
+          </div>
+        </div>
+        <div class="glass-card testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Finally a platform where I can learn AND earn. Built my portfolio with real work, not fake projects."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div><h4>Ananya Patel</h4><span>MCA Student, Mumbai</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,0.15) 0%, transparent 60%);">
+    <div class="container text-center">
+      <h2 style="font-size:2.5rem;margin-bottom:16px;">Ready to <span class="gradient-text">Learn & Earn?</span></h2>
+      <p style="color:var(--text-secondary);font-size:1.1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;">Join thousands of students building real skills and earning real money. It's free to start.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="#/signup" class="btn btn-primary btn-lg">🚀 Join as Student</a>
+        <a href="#/signup?role=business" class="btn btn-amber btn-lg">💼 Post Tasks as Business</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#/" class="navbar-logo" style="font-size:1.3rem;">⚡ SkillEarn</a>
+          <p>The bridge between student skills and real-world opportunity. Learn, earn, and grow.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="#/tasks">Browse Tasks</a>
+          <a href="#/">Skill Paths</a>
+          <a href="#/">AI Mentor</a>
+          <a href="#/">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <h4>For Business</h4>
+          <a href="#/signup?role=business">Post Tasks</a>
+          <a href="#/">How It Works</a>
+          <a href="#/">Business Plans</a>
+          <a href="#/">API Access</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 SkillEarn. All rights reserved.</p>
+        <p>Made with 💜 in India</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== AUTH PAGE ===== -->
+<div id="page-auth" class="page">
+  <div class="auth-page">
+    <div class="auth-container">
+      <div id="authSignup">
+        <h2>Create Account</h2>
+        <p class="auth-subtitle">Join SkillEarn and start your journey</p>
+        <div class="auth-role-selector">
+          <div class="role-btn active" data-role="student" onclick="selectRole('student')">🎓 Student</div>
+          <div class="role-btn" data-role="business" onclick="selectRole('business')">💼 Business</div>
+        </div>
+        <form class="auth-form" id="signupForm" onsubmit="handleSignup(event)">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="signupName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="signupEmail" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="signupPassword" placeholder="Min 6 characters" required minlength="6">
+          </div>
+          <div class="form-group" id="businessField" style="display:none;">
+            <label>Business Name</label>
+            <input type="text" id="signupBusiness" placeholder="Your business name">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
+        </form>
+        <p class="auth-footer">Already have an account? <a href="#/login">Log In</a></p>
+      </div>
+
+      <div id="authLogin" style="display:none;">
+        <h2>Welcome Back</h2>
+        <p class="auth-subtitle">Log in to your SkillEarn account</p>
+        <form class="auth-form" id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Your password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Log In</button>
+        </form>
+        <p class="auth-footer">Don't have an account? <a href="#/signup">Sign Up Free</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== STUDENT DASHBOARD ===== -->
+<div id="page-student" class="page">
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <h4 id="studentName">Student</h4>
+        <p>🎓 Student Account</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="active" onclick="showStudentTab('overview')"><span class="nav-icon">📊</span> Overview</a>
+        <a href="#" onclick="showStudentTab('mytasks')"><span class="nav-icon">📋</span> My Tasks</a>
+        <a href="#" onclick="showStudentTab('browse')"><span class="nav-icon">🔍</span> Browse Tasks</a>
+        <a href="#" onclick="showStudentTab('portfolio')"><span class="nav-icon">📁</span> Portfolio</a>
+        <a href="#" onclick="showStudentTab('wallet')"><span class="nav-icon">💰</span> Wallet</a>
+        <a href="#" onclick="showStudentTab('aimentor')"><span class="nav-icon">🤖</span> AI Mentor</a>
+        <a href="#" onclick="showStudentTab('certificates')"><span class="nav-icon">🎓</span> Certificates</a>
+      </nav>
+      <a href="#" onclick="handleLogout()" style="margin-top:auto;padding:12px 16px;color:var(--red);font-size:0.9rem;">🚪 Log Out</a>
+    </aside>
+    <main class="main-content" id="studentContent">
+      <!-- Dynamic content loaded by JS -->
+    </main>
+  </div>
+</div>
+
+<!-- ===== BUSINESS DASHBOARD ===== -->
+<div id="page-business" class="page">
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-user">
+        <h4 id="businessName">Business</h4>
+        <p>💼 Business Account</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="active" onclick="showBusinessTab('overview')"><span class="nav-icon">📊</span> Overview</a>
+        <a href="#" onclick="showBusinessTab('posttask')"><span class="nav-icon">➕</span> Post Task</a>
+        <a href="#" onclick="showBusinessTab('mytasks')"><span class="nav-icon">📋</span> My Tasks</a>
+        <a href="#" onclick="showBusinessTab('submissions')"><span class="nav-icon">📥</span> Submissions</a>
+        <a href="#" onclick="showBusinessTab('payments')"><span class="nav-icon">💳</span> Payments</a>
+      </nav>
+      <a href="#" onclick="handleLogout()" style="margin-top:auto;padding:12px 16px;color:var(--red);font-size:0.9rem;">🚪 Log Out</a>
+    </aside>
+    <main class="main-content" id="businessContent">
+      <!-- Dynamic content loaded by JS -->
+    </main>
+  </div>
+</div>
+
+<!-- ===== TASK BROWSE PAGE (public) ===== -->
+<div id="page-tasks" class="page">
+  <div class="browse-header">
+    <div class="container">
+      <h1>Browse <span class="gradient-text">Available Tasks</span></h1>
+      <p style="color:var(--text-secondary);">Find tasks that match your skills and start earning</p>
+    </div>
+  </div>
+  <div class="container" style="padding-bottom:60px;">
+    <div class="browse-filters" id="taskFilters">
+      <button class="filter-chip active" data-cat="all" onclick="filterTasks('all')">All Tasks</button>
+      <button class="filter-chip" data-cat="design" onclick="filterTasks('design')">🎨 Design</button>
+      <button class="filter-chip" data-cat="webdev" onclick="filterTasks('webdev')">🌐 Web Dev</button>
+      <button class="filter-chip" data-cat="content" onclick="filterTasks('content')">✍️ Content</button>
+      <button class="filter-chip" data-cat="video" onclick="filterTasks('video')">🎬 Video</button>
+      <button class="filter-chip" data-cat="data" onclick="filterTasks('data')">📊 Data</button>
+      <button class="filter-chip" data-cat="python" onclick="filterTasks('python')">🐍 Python</button>
+    </div>
+    <div class="tasks-grid" id="publicTaskGrid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ===== TASK DETAIL MODAL ===== -->
+<div class="modal-overlay hidden" id="taskModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalTaskTitle">Task Title</h2>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div id="modalTaskBody">
+      <!-- Dynamic -->
+    </div>
+  </div>
+</div>
+
+<!-- ===== RATING MODAL ===== -->
+<div class="modal-overlay hidden" id="ratingModal">
+  <div class="modal" style="max-width:420px;">
+    <div class="modal-header">
+      <h2>Rate this Task</h2>
+      <button class="modal-close" onclick="closeRatingModal()">✕</button>
+    </div>
+    <div style="text-align:center;">
+      <div class="star-rating" id="starRating" style="justify-content:center;margin-bottom:20px;">
+        <span class="star" data-v="1" onclick="setRating(1)">⭐</span>
+        <span class="star" data-v="2" onclick="setRating(2)">⭐</span>
+        <span class="star" data-v="3" onclick="setRating(3)">⭐</span>
+        <span class="star" data-v="4" onclick="setRating(4)">⭐</span>
+        <span class="star" data-v="5" onclick="setRating(5)">⭐</span>
+      </div>
+      <div class="form-group" style="margin-bottom:20px;">
+        <textarea id="ratingReview" placeholder="Write a short review..." rows="3"></textarea>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="submitRating()">Submit Rating</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
